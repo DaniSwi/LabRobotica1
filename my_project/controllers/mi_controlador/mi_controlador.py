@@ -1,4 +1,5 @@
 from controller import Robot, Keyboard
+import random
 
 robot = Robot()
 teclado = Keyboard()
@@ -54,9 +55,22 @@ while robot.step(timestep) != -1:
     elif tecla == ord("O"):
         v = 0.0
         w = 2.0
+    #extra de realizar una trayectoria de circulo de radio 0.2
+    elif tecla == ord("C"):
+        v = 0.1
+        w = v/0.2 #circulo de radio 0.2m w = v/R
+    #extra agregación de bias, ejemplo motor derecho es un 3% más lento que 
+    #el otro motor izquierdo
+    bias_der = 0.97
         
     vr = v + (w * L) / 2
     vl = v - (w * L) / 2
+    
+    vr = vr * bias_der
+    
+    #ruido aleatorio (extra)
+    ruido = random.uniform(-0.01, 0.01)
+    vl = vl + ruido
     
     #conversion de m/s a rad/s+
     r = 0.0205
