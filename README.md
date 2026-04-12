@@ -135,4 +135,14 @@ while robot.step(timestep) != -1:
 3.  **¿Qué ocurre cuando una rueda gira en sentido opuesto a la otra?**
    El robot rota sobre su propio eje, permitiendo cambios de dirección rápidos sin desplazamiento lineal
 
+### Extra
+
+Se agregó los extra que se pedían en el laboratorio
+
+1- Se agrega una trayectoria en círculo de 0.2m de radio manteniendo la tecla "C".
+
+2.- Se agrega un bias al motor derecho, que vaya un 3% más lento.
+
+3.- Se agrega ruido aleatorio al motor izquierdo.
+
 -----
